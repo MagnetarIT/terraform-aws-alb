@@ -6,5 +6,6 @@ terraform {
     template = "~> 2.0"
     local    = "~> 1.2"
     null     = "~> 2.0"
+    random   = "~> 2.2"
   }
 }
