@@ -45,7 +45,7 @@ module "subnets" {
 }
 
 module "alb" {
-  source                                  = "git::https://github.com/MagnetarIT/terraform-aws-alb.git?ref=tags/0.1.0"
+  source                                  = "git::https://github.com/MagnetarIT/terraform-aws-alb.git?ref=tags/0.1.1"
   namespace                               = "mag"
   environment                             = "test"
   name                                    = "app"

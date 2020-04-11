@@ -85,7 +85,7 @@ module "access_logs" {
 }
 
 resource "aws_lb" "default" {
-  name_prefix        = module.naming.id
+  name               = module.naming.id
   tags               = module.naming.tags
   internal           = var.internal
   load_balancer_type = "application"
@@ -109,7 +109,7 @@ resource "aws_lb" "default" {
 }
 
 resource "aws_lb_target_group" "default" {
-  name_prefix          = var.target_group_name == "" ? module.naming.id : var.target_group_name
+  name                 = var.target_group_name == "" ? module.naming.id : var.target_group_name
   port                 = var.target_group_port
   protocol             = "HTTP"
   vpc_id               = var.vpc_id
@@ -126,7 +126,7 @@ resource "aws_lb_target_group" "default" {
   }
 
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = false
   }
 
   tags = merge(
