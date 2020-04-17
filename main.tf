@@ -110,7 +110,7 @@ resource "aws_lb" "default" {
 
 # help with recreating of ALB target group
 resource "random_id" "alb_tg" {
-  byte_length = 8
+  byte_length = 3
   keepers = {
     name                 = var.target_group_name
     port                 = var.target_group_port
