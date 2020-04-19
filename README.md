@@ -45,7 +45,7 @@ module "subnets" {
 }
 
 module "alb" {
-  source                                  = "git::https://github.com/MagnetarIT/terraform-aws-alb.git?ref=tags/0.2.0"
+  source                                  = "git::https://github.com/MagnetarIT/terraform-aws-alb.git?ref=tags/0.4.0"
   namespace                               = "mag"
   environment                             = "test"
   name                                    = "app"
@@ -94,6 +94,7 @@ This module will create the following resources
 | health\_check\_interval | The duration in seconds in between health checks | `number` | `15` | no |
 | health\_check\_matcher | The HTTP response codes to indicate a healthy check | `string` | `"200-399"` | no |
 | health\_check\_path | The destination for the health check request | `string` | `"/"` | no |
+| health\_check\_port | The port to use to connect with the target. Valid values are either ports 1-65535, defaults to alb target port (target\_group\_port) | `number` | `0` | no |
 | health\_check\_timeout | The amount of time to wait in seconds before failing a health check request | `number` | `10` | no |
 | health\_check\_unhealthy\_threshold | The number of consecutive health check failures required before considering the target unhealthy | `number` | `2` | no |
 | http2\_enabled | A boolean flag to enable/disable HTTP/2 | `bool` | `true` | no |

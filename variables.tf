@@ -167,6 +167,12 @@ variable "health_check_path" {
   description = "The destination for the health check request"
 }
 
+variable "health_check_port" {
+  type        = number
+  default     = 0
+  description = "The port to use to connect with the target. Valid values are either ports 1-65535, defaults to alb target port (target_group_port)"
+}
+
 variable "health_check_timeout" {
   type        = number
   default     = 10
