@@ -167,6 +167,12 @@ variable "health_check_path" {
   description = "The destination for the health check request"
 }
 
+variable "health_check_protocol" {
+  type        = string
+  default     = ""
+  description = "The protocol to use to connect with the target. Defaults to alb target protocol (target_group_protocol)"
+}
+
 variable "health_check_port" {
   type        = number
   default     = 0

@@ -129,6 +129,7 @@ resource "aws_lb_target_group" "default" {
   deregistration_delay = var.deregistration_delay
 
   health_check {
+    protocol            = var.health_check_protocol == "" ? var.target_group_protocol : var.health_check_protocol
     path                = var.health_check_path
     port                = var.health_check_port == 0 ? var.target_group_port : var.health_check_port
     timeout             = var.health_check_timeout
